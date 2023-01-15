@@ -5,30 +5,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>MentorGram</title>
         <link rel="stylesheet" href="css/mentormeet_style.css">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600,700|Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800|Josefin+Sans:300,400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
     </head>
 
 <body>
     <nav>
         <ul>
             <li id="logo">
-                <p>MentorGram</p>
-                <p>for</p> 
-                <p>mentors</p>
+                <a href="index.html">
+                    <p id ='cname'>MentorGram</p>
+                </a>
+                 <p id ='extra'>for mentors</p>
             </li>
             <li>
-                <a href="\">
+                <a href="mentormeet.html" class="underline">
                     Meetings
                 </a>
             </li>
-            <div class = "vertical"></div>
             <li>
                 <a href="\">
                     Schedule
                 </a>
             </li>
-            <div class = "vertical"></div>
             <li>
-                <a href="\">
+                <a href="contact.html">
                     Contact
                 </a>
             </li>
@@ -39,7 +40,7 @@
     </nav>
     <div id="contentbox1">
         <div id="confmeetbox">
-            <p>Confirmed meetings</p>
+            <h4>Confirmed meetings</h4>
             <div id="confmeet">
                 <p>#1 (Mentee name)</p>
                 <div id="timeanddate">
@@ -77,14 +78,14 @@
             </div>
         </div>
         <div id="meetreqbox">
-            <p>Meeting requests</p>
+            <h4>Meeting requests</h4>
             <div id="meetreq">
                 <p>Request #1 from <span class="highlightme">(Mentee name)</span> made on
                     <span class="highlightme">(08.08.2040)</span></p>
                 <div id="dtcd">
                     <p id="pp">Requested time slot: <span class="highlightme">(Day, Time)</span></p>
-                    <a href="https://google.com" class="bt1">Confirm</a>
-                    <a href="https://google.com" class="bt1">Delete</a>
+                    <a href="mentor_confirm_meet.html"><button type="button" class="fill">Confirm</button></a>
+                    <a href="/"><button type="button" class="fill">Delete</button></a>
                 </div>
             </div>
             <div id="meetreq">
@@ -135,8 +136,7 @@
         </div>
     </div>
     <footer>
-        <p>Author: Hege Refsnes</p>
-        <p><a href="mailto:hege@example.com">hege@example.com</a></p>
-      </footer>
+        <p>&#169; 2023</p>
+    </footer>
 </body>
 </html>

@@ -4,9 +4,9 @@ body {
     margin: 0px;
     height: 100%;
     font-family: 'Montserrat',sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     color: #131310;
-    font-size: 25px;
+    font-size: 20px;
     background: #ebe4de;
 }
 
@@ -19,11 +19,12 @@ nav{
 
 ul{
     list-style-type: none;
-    align-items:baseline;
+    align-items:center;
     padding: 0px;
     margin: 0px;
     display: flex;
     gap: 5%;
+    flex-wrap: wrap;
 }
 
 ul a{
