@@ -146,6 +146,13 @@ a:active{
   padding: 1cm;
 }
 
+#locations{
+  width:250px;
+  height: 150px;
+  border: 1px solid;
+  overflow: scroll;
+}
+
 footer {
     font-family: 'Montserrat';
     font-weight: 500;
