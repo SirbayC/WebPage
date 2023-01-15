@@ -71,6 +71,7 @@ a:active{
   background-color: rgb(63, 150, 63);
   padding-top: 1cm;
   padding-left: 1.75cm;
+  font-size: x-large;
 }
 
 #contentbox1{
@@ -81,7 +82,8 @@ a:active{
     flex-direction: row;
     flex-grow: 1;
     min-height: 1000px;
-    padding: 3rem;
+    padding-left: 3rem;
+    padding-top: 0.5cm;
 }
 
 #contentbox2{
@@ -89,26 +91,42 @@ a:active{
     display: flex;
     padding: 2rem;
     background-color: #1900ff;
-   /*  max-width: 300px;
-    min-width: 300px; */
+    width: 15%;
     flex-wrap: wrap;
     font-weight: 300;
     font-size: 0.8rem;
     border-radius: 5px;
 }
 
+#skills{
+    width:250px;
+    height:150px;
+    border:1px solid;
+    overflow:scroll;
+}
+
+#company{
+    width:250px;
+    height:150px;
+    border:1px solid;
+    overflow:scroll;
+}
+
+#jobs{
+  width:250px;
+  height: 150px;
+  border: 1px solid;
+  overflow: scroll;
+}
+
 #contentbox3{
-    padding: 5%;
+    padding: 2rem;
     flex-grow: 1;
-    /* background-color: rgb(203, 1, 1); */
     gap: 20px;
     display: flex;
     flex-direction: column;
     background-color: #ff0000;
-   /*  max-width: 1200px;
-    min-width: 1200px; */
-    border-right-style: solid;
-    border-right-width: 2px;
+    width: 85%;
 }
 
 #contentbox4{
@@ -120,7 +138,9 @@ a:active{
     /* background-color: rgb(210, 14, 187); */
 }
 
-
+#profiles{
+  padding: 1cm;
+}
 
 footer {
     font-family: 'Montserrat';
