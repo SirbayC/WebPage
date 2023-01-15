@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>MentorGram</title>
-        <link rel="stylesheet" href="css/msu_style.css">
+        <link rel="stylesheet" href="css/mentor_signup_style.css">
         <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600,700|Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800|Josefin+Sans:300,400,500,600,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
     </head>
@@ -49,13 +49,16 @@
                         <input type="text" placeholder="Tate">
                     </div>
                 </div>
-                <label for="sex">Sex</label>
-                    <select name="sex" id="sex">
-                    <option value="Female">Female</option>
-                    <option value="Male">Male</option>
-                    <option value="Other" selected>Other</option>
-                    <option value="Not Consensual">Not Consensual</option>
-                </select>
+                <div class="shortfield">
+                    <label for="sex">Sex</label>
+                    <select required name="sex" id="sex" placeholder="fefef">
+                        <option value="" disabled selected hidden>Select your option</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other" >Other</option>
+                        <option value="Not Consensual">Not Consensual</option>
+                    </select>
+                </div>
                 <div class="longfield">
                     <label for="">Language</label>
                     <input type="text" placeholder="Simlish">
@@ -78,7 +81,7 @@
                 </div>
                 <label for="Bio">Bio:</label>
                 <textarea id="bio" name="bio" rows="6" cols="25" placeholder="    My unmatched perspicacity coupled with sheer indefatigability makes me a feared opponent in any realm of human endeavor."></textarea>                
-                    <th>Address:</th>
+                <p id="addid">Address:</p>
                 <div style="display: flex; 
                 flex-wrap: wrap;
                 gap:20px">
