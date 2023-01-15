@@ -83,6 +83,11 @@ a:active{
      bottom: -6px;
  }
 
+table{
+  border-style: solid;
+  border-color: #9B9A94;
+}
+
 #contentbox1{
     display: flex;
     justify-content:space-evenly;
@@ -112,6 +117,7 @@ a:active{
     display: flex;
     flex-direction: column;
     border-style: solid;
+    border-color: #9B9A94;
     padding: 1rem;
     padding-top:0rem;
     padding-bottom: 1.7rem;
