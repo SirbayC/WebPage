@@ -101,7 +101,7 @@ a:active{
     flex-direction: column;
     border: 1px;
     background-color: #EBE4DE;
-    padding: 1rem;
+    padding: 2rem;
     gap: 1rem;
     flex-grow: 0.3;
     border-radius: 5px;
@@ -148,7 +148,7 @@ a:active{
     display: flex;
     flex-direction: column;
     border: 1px;
-    padding: 1rem;
+    padding: 2rem;
     gap: 1rem;
     flex-grow: 0.6;
     border-radius: 5px;
