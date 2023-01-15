@@ -19,7 +19,7 @@ nav{
 
 ul{
     list-style-type: none;
-    align-items:baseline;
+    align-items:center;
     padding: 0px;
     margin: 0px;
     display: flex;
@@ -41,7 +41,7 @@ ul a{
     border: none;
     border-color: inherit;
     border-radius: 1.7rem;
-    background-image: url(/p.png);
+    background-image: url(/docs/assets/p.png);
     background-size:contain;
     background-repeat: no-repeat;
     background-color: inherit;
