@@ -233,3 +233,16 @@ footer {
     font-size: 0.8rem;
     font-weight: 400;
   }
+
+  .round-button {
+
+    width: 1.7rem;
+    height: 1.7rem;
+    border: none;
+    border-color: inherit;
+    border-radius: 1.7rem;
+    background-image: url(/docs/assests/p.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: inherit;
+}
