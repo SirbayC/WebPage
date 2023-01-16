@@ -1,0 +1,238 @@
+html,
+body {
+    padding: 0;
+    margin: 0px;
+    height: 100%;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #131310;
+    font-size: 20px;
+    background: #ebe4de;
+}
+
+
+nav{
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-bottom: 3px dotted hsl(0deg 0% 0% / 0.2);
+}
+
+ul{
+    list-style-type: none;
+    align-items:center;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+}
+
+ul a{
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    color: #131310;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+a:hover{
+    color:#9b9a94;
+    transition: all 0.5s ease;
+}
+
+a:active{
+    color: #403f47;
+}
+
+
+
+#logo{
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-right: auto;
+}
+
+#cname{
+    color: #131310;
+    font-family: 'Cormorant Garamond';
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+#extra{
+    color: #131310;
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+}
+
+#contentbox1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+      background-image: url("../ttt.png");
+  background-repeat: repeat;
+    flex-direction: row;
+    flex-grow: 1;
+    min-height: 1000px;
+    padding: 3rem;
+}
+
+#contentbox2{
+    display: flex;
+    padding: 2rem;
+    background-color: #ebe4de;
+    width: fit-content;
+    flex-wrap: wrap;
+    font-weight: 300;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
+#contentbox3{
+  padding: 5%;
+  flex-grow: 1;
+  /* background-color: rgb(203, 1, 1); */
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebe4de(0 0% 0%);
+}
+
+#contentbox4{
+    padding: 5%;
+    flex-grow: 1;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(210, 14, 187); */
+}
+
+
+
+footer {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.6rem;
+    padding: 0.6rem;
+    background-color: #9b9a94;
+    color: #131310;
+  }
+
+.shortfield{
+    display: flex; 
+    flex-direction: column;
+    max-width: fit-content;
+    min-width: 5rem;
+    gap:5px;
+}
+
+.longfield{
+    display: flex; 
+    flex-direction: column;
+    max-width: fit-content;
+    min-width: 10rem;
+    gap:5px;
+}
+
+.fill {
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 20px 10px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 1rem;
+  }
+  
+  .fill::after {
+    content: "";
+    background-color: #e0cbc4;
+    width: 100%;
+    z-index: 0;
+    mix-blend-mode: multiply;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+  
+  .fill:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+
+  input[type=text] {
+    font-family: 'Montserrat';
+    background-color: #ffffff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+  }
+
+  input[type=password] {
+    font-family: 'Montserrat';
+    background-color: #ffffff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+  }
+
+  textarea {
+    font-family: 'Montserrat';
+    background-color: #ffffff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+  }
+
+  select {
+    font-family: 'Montserrat';
+    background-color: #ffffff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+  }
+
+  select:invalid{
+    color: #8e8e8e;
+  }
+
+  option[disabled] {
+    display: none;
+  }
+  option {
+    color: black;
+  }
+
+  ::placeholder {
+    color: #8e8e8e;
+  }
+
+  #addid{
+    margin-top:1.2rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .round-button {
+
+    width: 1.7rem;
+    height: 1.7rem;
+    border: none;
+    border-color: inherit;
+    border-radius: 1.7rem;
+    background-image: url("../p.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    cursor: pointer;
+}

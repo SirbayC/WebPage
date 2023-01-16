@@ -1,0 +1,211 @@
+html,
+body {
+    padding: 0;
+    margin: 0px;
+    height: 100%;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 400;
+    color: #131310;
+    font-size: 20px;
+    background: #ebe4de;
+}
+
+nav{
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-bottom: 3px dotted hsl(0deg 0% 0% / 0.2);
+}
+
+ul{
+    list-style-type: none;
+    align-items:center;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+ul a{
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    color: #131310;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+a:hover{
+    color:#9b9a94;
+    transition: all 0.5s ease;
+}
+
+a:active{
+    color: #403f47;
+}
+
+#logo{
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-right: auto;
+}
+
+#cname{
+    color: #131310;
+    font-family: 'Cormorant Garamond';
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+#extra{
+    color: #131310;
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+}
+
+.underline {
+    text-decoration: none; 
+    position: relative; 
+  }   
+ 
+ .underline:after {
+     position: absolute;
+     height: 4px;
+     margin: 0 auto;
+     content: '';
+     left: 0;
+     right: 0;
+     width: 90%;
+     color: #000;
+     background-color:  #e0cbc4;
+     left: 0;
+     bottom: -6px;
+ }
+
+#contentbox1{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: flex-start;
+    background-image: url("../ttt.png");
+    background-repeat: repeat;
+    padding: 3rem;
+    flex-grow: 1;
+    min-height: 1000px;
+    flex-wrap: wrap;
+    gap:3rem;
+    margin-bottom: 10;
+}
+
+#confmeetbox{
+    display: flex;
+    flex-direction: column;
+    border: 1px;
+    background-color: #EBE4DE;
+    padding: 2rem;
+    gap: 1rem;
+    min-width: fit-content;
+    width: 600px;
+    max-width: 60%;
+    border-radius: 5px;
+}
+
+
+
+#dtcd{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;    
+}
+
+#confmeet{
+    display: flex;
+    flex-direction: column;
+   /*  background-color: brown; */
+    padding: 1rem;
+    border-color: #9B9A94;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+#conftopic{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#timeanddate{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.highlightme {
+    font-weight: 500;
+}
+
+.round-button {
+
+    width: 1.7rem;
+    height: 1.7rem;
+    border: none;
+    border-color: inherit;
+    border-radius: 1.7rem;
+    background-image: url("../p.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+
+.fill {
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 20px 10px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 1rem;
+  }
+  
+  .fill::after {
+    content: "";
+    background-color: #e0cbc4;
+    width: 100%;
+    z-index: 0;
+    mix-blend-mode: multiply;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+
+  .fill:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+
+#pp{
+    margin-right: auto;
+}
+footer {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.6rem;
+    padding: 0.6rem;
+    background-color: #9b9a94;
+    color: #131310;
+  }
