@@ -139,6 +139,7 @@ a:active{
 }
 
 #profiles{
+  gap:1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -258,12 +259,6 @@ footer {
     color: #8e8e8e;
   }
 
-  #addid{
-    margin-top:1.2rem;
-    margin-bottom: 0.1rem;
-    font-size: 0.8rem;
-    font-weight: 400;
-  }
 
   .round-button {
 
