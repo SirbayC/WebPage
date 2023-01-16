@@ -110,7 +110,7 @@ a:active {
 
 #vertdec {
   min-width: 1rem;
-  background-image: url("/vertical_deco.jpg");
+  background-image: url("../vertical_deco.jpg");
   background-repeat: repeat-y;
   background-size: contain;
 }

@@ -105,7 +105,7 @@ footer {
     min-height: 1000px;
     flex-wrap: wrap;
     gap:3rem;
-    background-image: url("../ttt.jpeg");
+    background-image: url("../ttt.png");
     background-color: rgb(2, 88, 2);
     background-size:     cover;                      /* <------ */
     background-repeat:   no-repeat;
