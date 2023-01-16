@@ -192,26 +192,39 @@
                 </div>
                 <div style="display: flex; flex-direction: column;">
                     <h5>Review score</h5>
+                    <div>
                     <input type="range" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value">
-                    <output>5 </output> star(s) out of 5.
+                    <output>5</output> <label for="volume">star(s) out of five.</label>
                 </div>
+                </div>
+                  
                 <div>
                     <h5>Location</h5>
                     <div class="optionbox">
-                        <input type="checkbox" id="loc" name="loc" value="loc">
-                        <label for="loc"> Delft</label><br>
-                        <input type="checkbox" id="loc" name="loc" value="loc">
-                        <label for="loc"> The Hague</label><br>
-                        <input type="checkbox" id="loc" name="loc" value="loc">
-                        <label for="loc"> Rotterdam</label><br>
-                        <input type="checkbox" id="loc" name="loc" value="loc">
-                        <label for="loc"> Your house;)</label><br>
-                        <input type="checkbox" id="loc" name="loc" value="loc">
-                        <label for="loc"> Breda</label><br>
-                        <input type="checkbox" id="loc" name="loc" value="loc">
-                        <label for="loc"> Tillburg</label><br>
-                        <input type="checkbox" id="loc" name="loc" value="loc">
-                        <label for="loc"> Eindhoven</label><br>
+                        <div class="opt">
+                            <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
+                            Location 1
+                        </div>
+                        <div class="opt">
+                            <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
+                            Location 2
+                        </div>
+                        <div class="opt">
+                            <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
+                            Location 3
+                        </div>
+                        <div class="opt">
+                            <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
+                            Location 4
+                        </div>
+                        <div class="opt">
+                            <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
+                            Location 5
+                        </div>
+                        <div class="opt">
+                            <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
+                            Location 6
+                        </div>
                     </div>
                 </div>
 
