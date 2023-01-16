@@ -46,23 +46,23 @@
     <div id="contentbox-1">
 
         <div id="contentbox0">
-            <input type="text" placeholder="Search for a mentor...">
+            <input type="text" placeholder="Search for a mentor..." width=100000px>
         </div>
         <div id="contentbox1">
             <div id="contentbox2">
                 <h3 style="margin: 0;">Filters</h3>
                 <div>
                     <h5>Skills</h5>
-                    <div id="skills">
-                        <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
-                        <div style="margin-left: 25px;">
+                    <div class="optionbox">
+                        <div class="opt">
+                            <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
                             Good at making playlists
                         </div>
-                        <br>
-                        <input id="cb" type="checkbox" style="float: left; margin-top: 5px;">
-                        <div style="margin-left: 25px;">
-                            Hopes to conquer the world
+                        <div class="opt">
+                            <input id="cb" type="checkbox">
+                            Good at making playlists
                         </div>
+
 
                         <div style="display: flex; flex-wrap: wrap;"><input type="checkbox" id="skill" name="skill"
                                 value="skill">
@@ -89,7 +89,7 @@
                 </div>
                 <div>
                     <h5>Jobs</h5>
-                    <div id="jobs">
+                    <div class="optionbox">
                         <input type="checkbox" id="job" name="job" value="job">
                         <label for="job"> Vibe Manager</label><br>
                         <input type="checkbox" id="job" name="job" value="job">
@@ -110,7 +110,7 @@
                 </div>
                 <div>
                     <h5>Company</h5>
-                    <div id="company">
+                    <div class="optionbox">
                         <input type="checkbox" id="companie" name="companie" value="companie">
                         <label for="companie"> Stalinskaya INC</label><br>
                         <input type="checkbox" id="companie" name="companie" value="companie">
@@ -136,7 +136,7 @@
                 </div>
                 <div>
                     <h5>Location</h5>
-                    <div id="locations">
+                    <div class="optionbox">
                         <input type="checkbox" id="loc" name="loc" value="loc">
                         <label for="loc"> Delft</label><br>
                         <input type="checkbox" id="loc" name="loc" value="loc">
@@ -156,17 +156,17 @@
 
             </div>
             <div id="contentbox3">
-                <div style="background-color: green; padding-left: 2rem;">
+                <div style="padding-left: 2rem;">
                     <h6>10 Results</h6>
                 </div>
                 <div id="profiles">
                     <div id="mentoracc">
-                        <div id="picrecinf" style="background-color: aqua;">
-                            <div id="picrec" style="background-color: yellow;">
-                                <div style="background-color: gray;">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
                                     <img id="pic" src="/p1.jpeg" alt="Avatar">
                                 </div>
-                                <div id="rec" style="background-color: firebrick;">
+                                <div id="rec">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -174,14 +174,14 @@
                                     <i class="fa fa-star-half-o "></i>
                                 </div>
                             </div>
-                            <div id="inf" style="background-color: pink;">
-                                <p style="margin: 0;">Name: (Name)</p>
-                                <p>Location: (Location)</p>
-                                <p>Company: (Company)</p>
-                                <p>Job category: (Job cat)</p>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
                             </div>
                         </div>
-                        <div id="skill" style="background-color: beige;">
+                        <div id="skill">
                             <div>Skills:</div>
                             <div id="sk">skill 1</div>
                             <div id="sk">skill 2</div>
@@ -191,22 +191,360 @@
                             <div id="sk">skill 6</div>
                             <div id="sk">skill 7</div>
                         </div>
-                        <div id="skill" style="background-color: green;">
+                        <div id="skill">
                             <div>Available:</div>
                             <div id="sk">Mon</div>
                             <div id="sk">Tue</div>
                             <div id="sk">Fri</div>
                         </div>
-                        <div id="bookbtn" style="background-color: orange;">
-                            <button class="custom-btn btn-5"><span>Book</span></button>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
+                        </div>
+                    </div>
+                    <div id="mentoracc">
+                        <div id="picrecinf">
+                            <div id="picrec">
+                                <div>
+                                    <img id="pic" src="/p1.jpeg" alt="Avatar">
+                                </div>
+                                <div id="rec">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o "></i>
+                                </div>
+                            </div>
+                            <div id="inf">
+                                <p>Name:<span class="highlightme"> (Name)</span></p>
+                                <p>Location:<span class="highlightme"> (Location)</span></p>
+                                <p>Company:<span class="highlightme"> (Company)</span></p>
+                                <p>Job category:<span class="highlightme"> (Job cat)</span></p>
+                            </div>
+                        </div>
+                        <div id="skill">
+                            <div>Skills:</div>
+                            <div id="sk">skill 1</div>
+                            <div id="sk">skill 2</div>
+                            <div id="sk">skill 3</div>
+                            <div id="sk">skill 4</div>
+                            <div id="sk">skill 5</div>
+                            <div id="sk">skill 6</div>
+                            <div id="sk">skill 7</div>
+                        </div>
+                        <div id="skill">
+                            <div>Available:</div>
+                            <div id="sk">Mon</div>
+                            <div id="sk">Tue</div>
+                            <div id="sk">Fri</div>
+                        </div>
+                        <div id="bookbtn">
+                            <a href="mentee_book.html"> <button class="custom-btn btn-5"><span
+                                        class="highlightme">Book</span></button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer>
-            <p>&#169; 2023</p>
-        </footer>
+    </div>
+    <footer>
+        <p>&#169; 2023</p>
+    </footer>
 </body>
 
 </html>
