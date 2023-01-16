@@ -193,7 +193,8 @@ footer {
     border: none;
     border-color: inherit;
     border-radius: 1.7rem;
-    background-image: url(/docs/assets/p.png);
+    background-image: url("../p.png");
+    cursor: pointer;
     background-size:contain;
     background-repeat: no-repeat;
     background-color: inherit;

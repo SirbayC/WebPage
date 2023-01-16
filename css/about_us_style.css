@@ -117,8 +117,9 @@ footer {
     border: none;
     border-color: inherit;
     border-radius: 1.7rem;
-    background-image: url("../404.jpeg");
+    background-image: url("../p.png");
     background-size:contain;
     background-repeat: no-repeat;
     background-color: inherit;
+    cursor: pointer;
 }

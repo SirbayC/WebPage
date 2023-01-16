@@ -105,6 +105,11 @@ footer {
     min-height: 1000px;
     flex-wrap: wrap;
     gap:3rem;
+    background-image: url("../404.jpeg");
+    background-color: rgb(2, 88, 2);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
 }
 
 .round-button {
@@ -114,8 +119,9 @@ footer {
     border: none;
     border-color: inherit;
     border-radius: 1.7rem;
-    background-image: url(/docs/assets/p.png);
+    background-image: url("../p.png");
     background-size:contain;
     background-repeat: no-repeat;
     background-color: inherit;
+    cursor: pointer;
 }

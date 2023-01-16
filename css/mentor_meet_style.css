@@ -10,7 +10,6 @@ body {
     background: #ebe4de;
 }
 
-
 nav{
     padding-right: 1rem;
     padding-left: 1rem;
@@ -23,6 +22,7 @@ ul{
     padding: 0px;
     margin: 0px;
     display: flex;
+    flex-wrap: wrap;
     gap: 5%;
 }
 
@@ -34,20 +34,6 @@ ul a{
     font-size: 0.9rem;
 }
 
-.round-button {
-
-    width: 1.7rem;
-    height: 1.7rem;
-    border: none;
-    border-color: inherit;
-    border-radius: 1.7rem;
-    background-image: url(/docs/assets/p.png);
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-color: inherit;
-}
-
-
 a:hover{
     color:#9b9a94;
     transition: all 0.5s ease;
@@ -56,8 +42,6 @@ a:hover{
 a:active{
     color: #403f47;
 }
-
-
 
 #logo{
     display: flex;
@@ -80,86 +64,115 @@ a:active{
     font-size: 1rem;
 }
 
+.underline {
+    text-decoration: none; 
+    position: relative; 
+  }   
+ 
+ .underline:after {
+     position: absolute;
+     height: 4px;
+     margin: 0 auto;
+     content: '';
+     left: 0;
+     right: 0;
+     width: 90%;
+     color: #000;
+     background-color:  #e0cbc4;
+     left: 0;
+     bottom: -6px;
+ }
+
 #contentbox1{
     display: flex;
-    justify-content: center;
+    justify-content:space-evenly;
     align-items: flex-start;
-    background-color: rgb(63, 150, 63);
-    flex-direction: row;
-    min-height: 1000px;
+    background-color: rgb(2, 88, 2);
     padding: 3rem;
-}
-
-#contentbox2{
-    display: flex;
-    padding: 2rem;
-    background-color: #EBE4DE;
-    max-width: 1200px;
+    flex-grow: 1;
+    min-height: 1000px;
     flex-wrap: wrap;
-    font-weight: 300;
-    font-size: 1rem;
-    border-radius: 5px;
-    flex-direction: column;
-    gap: 2rem;
+    gap:3rem;
+    margin-bottom: 10;
 }
 
-#contentbox3{
-    padding: 0;
+#confmeetbox{
     display: flex;
     flex-direction: column;
+    border: 1px;
+    background-color: #EBE4DE;
+    padding: 2rem;
     gap: 1rem;
+    flex-grow: 0.3;
+    border-radius: 5px;
 }
 
-#contentbox4{
-    border-style: solid;
+#confmeet{
     display: flex;
     flex-direction: column;
-    background-color: white;
-    padding-bottom: 5px;
+   /*  background-color: brown; */
+    padding: 1rem;
     border-color: #9B9A94;
-    border-width: 0.2rem;
+    border-style: solid;
+    border-radius: 5px;
 }
 
-#contentbox5{
+#timeanddate{
+    /* background-color: blue; */
     display: flex;
-    justify-content: end;
+    flex-direction: row;
+    column-gap: 1rem;
+    flex-wrap: wrap;
 }
 
-#Monthselector{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    border-bottom-style: solid;
-    border-bottom-color:#9B9A94
+.highlightme {
+    font-weight: 500;
 }
 
-th{
-    font-size: 0.8rem;
-}
+.round-button {
 
-table{
-    margin-top: 10px;
-}
-
-td{
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 0.7rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: none;
+    border-color: inherit;
+    border-radius: 1.7rem;
+    background-image: url("../p.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: inherit;
     cursor: pointer;
 }
 
 
-footer {
-    font-family: 'Montserrat';
-    font-weight: 500;
-    text-align: center;
-    font-size: 0.6rem;
-    padding: 0.6rem;
-    background-color: #9b9a94;
-    color: #131310;
-  }
+#meetreqbox{
+    background-color: #EBE4DE;
+    display: flex;
+    flex-direction: column;
+    border: 1px;
+    padding: 2rem;
+    gap: 1rem;
+    flex-grow: 0.6;
+    border-radius: 5px;
+}
+
+#meetreq{
+    border-color: #9B9A94;
+    border-style: solid;
+    border-radius: 5px;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#dtcd{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;    
+}
 
 .fill {
     font-family: 'Montserrat';
@@ -187,17 +200,21 @@ footer {
     left: 7px;
     transition: 0.2s;
   }
-  
+
   .fill:hover::after {
     top: 0px;
     left: 0px;
   }
 
-
-  textarea {
+#pp{
+    margin-right: auto;
+}
+footer {
     font-family: 'Montserrat';
-    background-color: #ffffff;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.6rem;
+    padding: 0.6rem;
+    background-color: #9b9a94;
+    color: #131310;
   }
