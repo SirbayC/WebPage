@@ -33,102 +33,106 @@
     </nav>
     <div id="contentbox1">
         <div id="contentbox2">
-            <div id="contentbox3">
-                <div>
-                    <h4>Sign up</h4>
-                </div>
-                <div style="display: flex; 
+            <form action="mentee_search.html">
+
+                <div id="contentbox3">
+                    <div>
+                        <h4>Sign up</h4>
+                    </div>
+                    <div style="display: flex; 
                 flex-wrap: wrap;
                 gap:20px">
-                    <div class="shortfield">
-                        <label for="">First name</label>
-                        <input type="text" placeholder="Andrew">
+                        <div class="shortfield">
+                            <label for="">First name</label>
+                            <input type="text" placeholder="Andrew" required>
+                        </div>
+                        <div class="shortfield">
+                            <label for="">Last name</label>
+                            <input type="text" placeholder="Tate" required>
+                        </div>
                     </div>
                     <div class="shortfield">
-                        <label for="">Last name</label>
-                        <input type="text" placeholder="Tate">
+                        <label for="sex">Sex</label>
+                        <select required name="sex" id="sex" placeholder="fefef">
+                            <option value="" disabled selected hidden>Select your option</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
-                </div>
-                <div class="shortfield">
-                    <label for="sex">Sex</label>
-                    <select required>
-                        <option value="" disabled selected hidden>Select your option</option>
-                        <option value="Female">Female</option>
-                        <option value="Male">Male</option>
-                        <option value="Other" >Other</option>
-                    </select>
-                </div>
-                <div class="longfield">
-                    <label for="">Language</label>
-                    <input type="text" placeholder="Simlish">
-                </div>
-                <div class="longfield">
-                    <label for="">Username</label>
-                    <input type="text" placeholder="ILovePizzas">
-                </div>
-                <div class="longfield">
-                    <label for="">Email</label>
-                    <input type="text" placeholder="andrew.tate@yahoo.com">
-                </div>
-                <div class="longfield">
-                    <label for="">Password</label>
-                    <input type="password" placeholder="*****************">
-                </div>
-                <div class="longfield">
-                    <label for="">Confirm password</label>
-                    <input type="password" placeholder="*****************">
-                </div>
-                <label for="Bio">Bio:</label>
-                <textarea id="bio" name="bio" rows="6" cols="25" placeholder="    My unmatched perspicacity coupled with sheer indefatigability makes me a feared opponent in any realm of human endeavor."></textarea>                
-                <p id="addid">Address:</p>
-                <div style="display: flex; 
+                    <div class="longfield">
+                        <label for="">Language</label>
+                        <input type="text" placeholder="Simlish" required>
+                    </div>
+                    <div class="longfield">
+                        <label for="">Username</label>
+                        <input type="text" minlength="5" maxlength="12" placeholder="ILovePizzas" required>
+                    </div>
+                    <div class="longfield">
+                        <label for="">Email</label>
+                        <input type="email" placeholder="andrew.tate@yahoo.com" required>
+                    </div>
+                    <div class="longfield">
+                        <label for="">Password</label>
+                        <input type="password" placeholder="*****************" required minlength="12">
+                    </div>
+                    <div class="longfield">
+                        <label for="">Confirm password</label>
+                        <input type="password" placeholder="*****************" required minlength="12">
+                    </div>
+                    <label for="Bio">Bio:</label>
+                    <textarea id="bio" name="bio" rows="6" cols="25"
+                        placeholder="    My unmatched perspicacity coupled with sheer indefatigability makes me a feared opponent in any realm of human endeavor."></textarea>
+                    <p id="addid">Address:</p>
+                    <div style="display: flex; 
                 flex-wrap: wrap;
                 gap:20px">
-                    <div class="shortfield">
-                        <label for="">Country</label>
-                        <input type="text" placeholder="Romania">
+                        <div class="shortfield">
+                            <label for="">Country</label>
+                            <input type="text" placeholder="Romania" required>
+                        </div>
+                        <div class="shortfield">
+                            <label for="">Post code</label>
+                            <input type="text" placeholder="077190" required maxlength="6" minlength="6">
+                        </div>
                     </div>
-                    <div class="shortfield">
-                        <label for="">Post code</label>
-                        <input type="text" placeholder="077190">
-                    </div>
-                    
-                    
-                </div>
-                <div style="display: flex; 
+                    <div style="display: flex; 
                 flex-wrap: wrap;
                 gap:20px">
-                    <div class="shortfield">
-                        <label for="">Street name</label>
-                        <input type="text" placeholder="Drumul Bisericii">
+                        <div class="shortfield">
+                            <label for="">Street name</label>
+                            <input type="text" placeholder="Drumul Bisericii">
+                        </div>
+                        <div class="shortfield">
+                            <label for="">House Number</label>
+                            <input type="text" placeholder="50">
+                        </div>
+
+
                     </div>
-                    <div class="shortfield">
-                        <label for="">House Number</label>
-                        <input type="text" placeholder="50">
+                    <div>
+                        <a href="mentee_search.html"><button type="submit" class="fill">Register</button></a>
                     </div>
-                    
-                    
                 </div>
-                <div>
-                    <a href="mentor_meet.html"><button type="button" class="fill">Register</button></a>
+            </form>
+            <form action="mentee_search.html">
+                <div id="contentbox4">
+                    <div>
+                        <h4>Already have an account?</h4>
+                    </div>
+                    <div class="longfield">
+                        <label for="">Email</label>
+                        <input type="text" placeholder="andrew.tate@yahoo.com" required>
+                    </div>
+                    <div class="longfield">
+                        <label for="">Password</label>
+                        <input type="password" placeholder="*****************" required>
+                    </div>
+                    <div>
+                        <a href="mentee_search.html"><button type="submit" class="fill">Sign in</button></a>
+                    </div>
                 </div>
-            </div>
-            <div id="contentbox4">
-                <div>
-                    <h4>Already have an account?</h4>
-                </div>
-                <div class="longfield">
-                    <label for="">Email</label>
-                    <input type="text" placeholder="andrew.tate@yahoo.com">
-                </div>
-                <div class="longfield">
-                    <label for="">Password</label>
-                    <input type="password" placeholder="*****************">
-                </div>
-                <div>
-                    <a href="mentor_meet.html"><button type="button" class="fill">Sign in</button></a>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <footer>

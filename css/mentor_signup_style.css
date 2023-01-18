@@ -172,22 +172,14 @@ footer {
     left: 0px;
   }
 
-  input[type=text] {
+  input {
     font-family: 'Montserrat';
     background-color: #ffffff;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
   }
-
-  input[type=password] {
-    font-family: 'Montserrat';
-    background-color: #ffffff;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 4px;
-  }
-
+  
   textarea {
     font-family: 'Montserrat';
     background-color: #ffffff;
