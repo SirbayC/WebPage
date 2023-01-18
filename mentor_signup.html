@@ -44,11 +44,11 @@
                 gap:20px">
                         <div class="shortfield">
                             <label for="">First name</label>
-                            <input type="text" placeholder="Andrew" required>
+                            <input type="text" placeholder="Andrew" pattern="[A-Za-z]+">
                         </div>
                         <div class="shortfield">
                             <label for="">Last name</label>
-                            <input type="text" placeholder="Tate" required>
+                            <input type="text" placeholder="Tate" pattern="[A-Za-z]+">
                         </div>
                     </div>
                     <div class="shortfield">
@@ -62,23 +62,23 @@
                     </div>
                     <div class="longfield">
                         <label for="">Language</label>
-                        <input type="text" placeholder="Simlish" required>
+                        <input type="text" placeholder="Simlish" pattern="[A-Za-z]+">
                     </div>
                     <div class="longfield">
                         <label for="">Username</label>
-                        <input type="text" minlength="5" maxlength="12" placeholder="ILovePizzas" required>
+                        <input type="text" pattern="^[A-Z]{1}.{3,10}[@$!%*?&]{1}$" placeholder="ILovePizzas">
                     </div>
                     <div class="longfield">
                         <label for="">Email</label>
-                        <input type="email" placeholder="andrew.tate@yahoo.com" required>
+                        <input type="text" placeholder="andrew.tate@yahoo.com" pattern=".+[@]{1}.+[\.].+">
                     </div>
                     <div class="longfield">
                         <label for="">Password</label>
-                        <input type="password" placeholder="*****************" required minlength="12">
+                        <input type="password" placeholder="*****************" pattern="^(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{12,}$">
                     </div>
                     <div class="longfield">
                         <label for="">Confirm password</label>
-                        <input type="password" placeholder="*****************" required minlength="12">
+                        <input type="password" placeholder="*****************" pattern="^(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{12,}$">
                     </div>
                     <label for="Bio">Bio:</label>
                     <textarea id="bio" name="bio" rows="6" cols="25"
@@ -89,11 +89,11 @@
                 gap:20px">
                         <div class="shortfield">
                             <label for="">Country</label>
-                            <input type="text" placeholder="Romania" required>
+                            <input type="text" placeholder="Romania" pattern="[A-Za-z]+">
                         </div>
                         <div class="shortfield">
                             <label for="">Post code</label>
-                            <input type="text" placeholder="077190" required maxlength="6" minlength="6">
+                            <input type="text" placeholder="077190" pattern="[0-9]{4}[A-Za-z]{2}">
                         </div>
                     </div>
                     <div style="display: flex; 
@@ -122,11 +122,11 @@
                     </div>
                     <div class="longfield">
                         <label for="">Email</label>
-                        <input type="text" placeholder="andrew.tate@yahoo.com" required>
+                        <input type="text" placeholder="andrew.tate@yahoo.com"  pattern=".+[@]{1}.+[\.].+">
                     </div>
                     <div class="longfield">
                         <label for="">Password</label>
-                        <input type="password" placeholder="*****************" required>
+                        <input type="password" placeholder="*****************">
                     </div>
                     <div>
                         <a href="mentee_search.html"><button type="submit" class="fill">Sign in</button></a>
