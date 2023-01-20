@@ -36,7 +36,7 @@
     </nav>
     <div id="contentbox1">
         <div id="contentbox2">
-            <form action="mentee_search.html" id="contentbox3">
+            <form action="mentor_meet.html" id="contentbox3">
                 <div>
                     <h4>Sign up</h4>
                 </div>
@@ -110,10 +110,26 @@
                     </div>
                 </div>
                 <div>
-                    <a href="mentee_search.html"><button type="submit" class="fill">Register</button></a>
+                    <button type="submit" class="fill">Register</button>
+                    <script>
+                        let fname = document.getElementById('fname');
+                        let lname = document.getElementById('lname');
+                        let language = document.getElementById('language');
+                        let username = document.getElementById('username');
+                        let email = document.getElementById('email');
+                        let password = document.getElementById('password');
+                        let password2 = document.getElementById('password2');
+                        const button = document.getElementById("mentor_si_btn");
+                        button.addEventListener("click", addNewItem);
+
+
+                        function addNewItem() {
+                            alert("aaaa");
+                        }
+                    </script>
                 </div>
             </form>
-            <form action="mentee_search.html" id="contentbox4">
+            <form action="mentor_meet.html" id="contentbox4">
                 <div>
                     <h4>Already have an account?</h4>
                 </div>
@@ -126,7 +142,7 @@
                     <input type="password" placeholder="*****************">
                 </div>
                 <div>
-                    <a href="mentee_search.html"><button type="submit" class="fill">Sign in</button></a>
+                    <button type="submit" class="fill" id="mentor_si_btn">Sign in</button>
                 </div>
             </form>
         </div>
