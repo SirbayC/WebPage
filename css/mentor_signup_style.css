@@ -180,6 +180,19 @@ footer {
     border-radius: 4px;
   }
   
+  .bad_input {
+    border-style: solid;
+    border-color: red;
+    border-radius: 4px;
+    border-width: 2px;
+    position: relative;
+  }
+  .bad_input_message{
+    color: red;
+    font-size: 0.6rem;
+    font-weight: 600;
+  }
+
   textarea {
     font-family: 'Montserrat';
     background-color: #ffffff;

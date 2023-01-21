@@ -10,6 +10,8 @@
         href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600,700|Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800|Josefin+Sans:300,400,500,600,700"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./jagajaga.js"></script>
 </head>
 
 <body>
@@ -36,7 +38,7 @@
     </nav>
     <div id="contentbox1">
         <div id="contentbox2">
-            <form action="mentor_meet.html" id="contentbox3">
+            <form onsubmit="return validateRegisterForm()" id="contentbox3" method="post" target="_blank">
                 <div>
                     <h4>Sign up</h4>
                 </div>
@@ -45,7 +47,7 @@
                 gap:20px">
                     <div class="shortfield">
                         <label for="">First name</label>
-                        <input type="text" placeholder="Andrew" id="fname">
+                        <input type="text" placeholder="Andrew" id="fname" class="">
                     </div>
                     <div class="shortfield">
                         <label for="">Last name</label>
@@ -54,7 +56,7 @@
                 </div>
                 <div class="shortfield">
                     <label for="sex">Sex</label>
-                    <select required name="sex" id="sex" placeholder="fefef">
+                    <select name="sex" id="sex" placeholder="fefef">
                         <option value="" disabled selected hidden>Select your option</option>
                         <option value="Female">Female</option>
                         <option value="Male">Male</option>
@@ -110,23 +112,7 @@
                     </div>
                 </div>
                 <div>
-                    <button type="submit" class="fill">Register</button>
-                    <script>
-                        let fname = document.getElementById('fname');
-                        let lname = document.getElementById('lname');
-                        let language = document.getElementById('language');
-                        let username = document.getElementById('username');
-                        let email = document.getElementById('email');
-                        let password = document.getElementById('password');
-                        let password2 = document.getElementById('password2');
-                        const button = document.getElementById("mentor_si_btn");
-                        button.addEventListener("click", addNewItem);
-
-
-                        function addNewItem() {
-                            alert("aaaa");
-                        }
-                    </script>
+                    <button type="submit" class="fill" id="mentor_reg_btn">Register</button>
                 </div>
             </form>
             <form action="mentor_meet.html" id="contentbox4">
