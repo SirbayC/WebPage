@@ -326,13 +326,9 @@ function validatePassword(password, password2) {
     }
     if (password2.classList.contains("bad_input")) {
         password2.classList.remove("bad_input");
-        const element = document.getElementById("error_text_password2");
-        element.remove();
     }
     if (password2.classList.contains("good_input")) {
         password2.classList.remove("good_input");
-        const element = document.getElementById("good_text_password2");
-        element.remove();
     }
     if (val === '') {
         password.classList.add("bad_input");
