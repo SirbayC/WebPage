@@ -19,7 +19,7 @@ function validateRegisterForm() {
 function validateFname(fname) {
     if (fname.classList.contains("bad_input")) {
         fname.classList.remove("bad_input");
-        const element = document.getElementById("error_text");
+        const element = document.getElementById("error_text_fname");
         element.remove();
     }
     let val = fname.value;
@@ -27,7 +27,7 @@ function validateFname(fname) {
     if (val === '') {
         fname.classList.add("bad_input");
         const newDiv = document.createElement("div");
-        newDiv.setAttribute("id", "error_text");
+        newDiv.setAttribute("id", "error_text_fname");
         const newContent = document.createTextNode("First name must not be empty!");
         newDiv.appendChild(newContent);
         newDiv.classList.add("bad_input_message")
@@ -38,16 +38,14 @@ function validateFname(fname) {
         for (let i = 0; i < val.length; i++) {
             if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))) {
                 check = false;
-                if (!fname.classList.contains("bad_input")) {
-                    fname.classList.add("bad_input");
-                    const newDiv = document.createElement("div");
-                    newDiv.setAttribute("id", "error_text");
-                    const newContent = document.createTextNode("First name must contain only letters!");
-                    newDiv.appendChild(newContent);
-                    newDiv.classList.add("bad_input_message")
-                    fname.after(newDiv);
-                    break;
-                }
+                fname.classList.add("bad_input");
+                const newDiv = document.createElement("div");
+                newDiv.setAttribute("id", "error_text_fname");
+                const newContent = document.createTextNode("First name must contain only letters!");
+                newDiv.appendChild(newContent);
+                newDiv.classList.add("bad_input_message")
+                fname.after(newDiv);
+                break;
             }
         }
     }
@@ -57,21 +55,19 @@ function validateFname(fname) {
 function validateLname(lname) {
     let val = lname.value;
     let check = true;
-    if (fname.classList.contains("bad_input")) {
-        fname.classList.remove("bad_input");
-        const element = document.getElementById("error_text");
+    if (lname.classList.contains("bad_input")) {
+        lname.classList.remove("bad_input");
+        const element = document.getElementById("error_text_lname");
         element.remove();
     }
     if (val === '') {
-        if (!lname.classList.contains("bad_input")) {
-            lname.classList.add("bad_input");
-            const newDiv = document.createElement("div");
-            newDiv.setAttribute("id", "error_text");
-            const newContent = document.createTextNode("Last name must not be empty!");
-            newDiv.appendChild(newContent);
-            newDiv.classList.add("bad_input_message")
-            lname.after(newDiv);
-        }
+        lname.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text_lname");
+        const newContent = document.createTextNode("Last name must not be empty!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        lname.after(newDiv);
         check = false;
     }
     else {
