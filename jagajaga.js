@@ -213,7 +213,7 @@ function validateEmail(email) {
             if (point === true && arond === true)
                 partthr = true
         }
-        if (!(partone && arond && parttwo && point && partthr && val.length>4)) {
+        if (!(partone && arond && parttwo && point && partthr && val.length > 4)) {
             check = false;
             email.classList.add("bad_input");
             const newDiv = document.createElement("div");
@@ -532,11 +532,37 @@ function validateZip(zipcode) {
     return check;
 }
 
+window.onload = function () {
+    var body_count = 0;
+    document.getElementById('body').onclick = function () {
+        body_count++;
+        if (body_count == 999) {
+            window.close();
+        }
+        document.getElementById('clicks').innerHTML = body_count;
+    };
 
 
-function showStats(){
+
+    var start_time = Date.now();
+    setInterval(function () {
+        var time_diff = Date.now() - start_time;
+        document.getElementById('time').innerHTML = Math.floor((time_diff / 1000) / 60);
+        document.getElementById('seconds').innerHTML = Math.floor((time_diff / 1000) % 60);
+    }, 1000);
+};
+
+function updateKey(){
+    document.getElementById('keys').innerHTML = Number(document.getElementById('keys').innerHTML) + 1;
+}
+
+function updateChar(){
+    document.getElementById('chars').innerHTML = Number(document.getElementById('chars').innerHTML) + 1;
+}
+
+function showStats() {
     const el = document.getElementById('sefulabani');
-    el.style.display='flex';
-    el.style.flexDirection='column';
+    el.style.display = 'flex';
+    el.style.flexDirection = 'column';
 
 }

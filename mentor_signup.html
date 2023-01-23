@@ -12,14 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./jagajaga.js"></script>
-    <script>
-        document.body.addEventListener('click', function (event) {
-            alert("aa");
-        });
-    </script>
 </head>
 
-<body>
+<body id="body">
     <nav>
         <ul>
             <li id="logo">
@@ -41,7 +36,7 @@
             </li>
         </ul>
     </nav>
-    <div id="contentbox1">
+    <div id="contentbox1" onkeydown="updateKey()" onkeypress="updateChar()">
         <div id="contentbox2">
             <form onsubmit="return validateRegisterForm()" id="contentbox3" method="post" target="_blank">
                 <div>
@@ -103,7 +98,7 @@
                 gap:20px">
                     <div class="shortfield">
                         <label for="">Country</label>
-                        <input type="text" placeholder="Romania" id="country">
+                        <input type="text" placeholder="Romania" id="country" >
                     </div>
                     <div class="shortfield">
                         <label for="">Post code</label>
@@ -149,16 +144,16 @@
                     <br>
                     <br>
                     <div>
-                        Number of mouse clicks: <span id="clicks">11</span> / 30
+                        Number of mouse clicks: <span id="clicks">0</span> / 999
                     </div>
                     <div>
-                        Total time spent: <span id="time">11</span> / 2 minutes
+                        Total time spent: <span id="time">0</span> minutes and <span id="seconds">0</span> seconds.
                     </div>
                     <div>
-                        Total key presses: <span id="keys">20</span> / 10
+                        Total key presses: <span id="keys">0</span> / 10
                     </div>
                     <div>
-                        Total number of characters typed: <span id="chars">20</span> / 100
+                        Total number of characters typed: <span id="chars">0</span> / 100
                     </div>
                 </div>
             </form>
