@@ -7,8 +7,23 @@ function validateRegisterForm() {
     let password = document.getElementById('password');
     let password2 = document.getElementById('password2');
     let sexsekect = document.getElementById('sex');
+    let country = document.getElementById('country');
+    let zipcode = document.getElementById('code');
+    let bio = document.getElementById('bio');
+    let street = document.getElementById('street');
+    let housenum = document.getElementById('number');
 
-    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateUsername(username) & validateEmail(email) & validateSex(sexsekect) & validatePassword(password, password2)) {
+    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateUsername(username) & validateEmail(email) & validateSex(sexsekect) & validatePassword(password, password2) & validateCountry(country) & validateZip(zipcode)) {
+        alert(`You have succesfully created an account with the following data:
+        \nFirst name: ${fname.value}
+        \nLast name: ${lname.value}
+        \nSex: ${sexsekect.value}
+        \nLanguage: ${language.value}
+        \nUsername: ${username.value}
+        \nEmail: ${email.value}
+        \nPassword: ${password.value}
+        \nBio: ${bio.value}
+        \nAddress: ${street.value} ${housenum.value}, ${zipcode.value}, ${country.value}`);
         window.location.href = "mentor_meet.html";
         return true;
     }
