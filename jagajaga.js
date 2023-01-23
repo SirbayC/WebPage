@@ -197,8 +197,5 @@ function validateSex(sexsekect) {
         sexsekect.after(newDiv);
         check = false;
     }
-    else {
-        sexsekect.style.color = '#131310';
-    }
     return check;
 }

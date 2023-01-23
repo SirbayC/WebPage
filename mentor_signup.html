@@ -63,11 +63,10 @@
                         <option value="Other">Other</option>
                     </select>
                     <script>
-                        document.getElementById('sex').onchange = function(){
-                            if(s.value!='def'){
-                                s.style.color = 'red';
-                            }
-                        };
+                        document.addEventListener('input', function (event) {
+                            if (event.target.id !== 'sex') return;
+                            document.getElementById('sex').style.color = '#131310';
+                        });
                     </script>
                 </div>
                 <div class="longfield">
