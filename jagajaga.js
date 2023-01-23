@@ -198,7 +198,7 @@ function validateEmail(email) {
             if (point === true && arond === true)
                 partthr = true
         }
-        if (!(partone && arond && parttwo && point && partthr)) {
+        if (!(partone && arond && parttwo && point && partthr && val.length>4)) {
             check = false;
             email.classList.add("bad_input");
             const newDiv = document.createElement("div");
