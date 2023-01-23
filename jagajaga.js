@@ -6,8 +6,6 @@ function validateRegisterForm() {
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     let password2 = document.getElementById('password2');
-    const button = document.getElementById("mentor_reg_btn");
-    button.addEventListener("click", validateRegisterForm);
     if (validateFname(fname) & validateLname(lname)) {
         window.location.href = "mentor_meet.html";
         return true;
@@ -19,12 +17,18 @@ function validateRegisterForm() {
 }
 
 function validateFname(fname) {
+    if (fname.classList.contains("bad_input")) {
+        fname.classList.remove("bad_input");
+        const element = document.getElementById("error_text");
+        element.remove();
+    }
     let val = fname.value;
     let check = true;
     if (val === '') {
         if (!fname.classList.contains("bad_input")) {
             fname.classList.add("bad_input");
             const newDiv = document.createElement("div");
+            newDiv.setAttribute("id", "error_text");
             const newContent = document.createTextNode("First name must not be empty!");
             newDiv.appendChild(newContent);
             newDiv.classList.add("bad_input_message")
@@ -33,15 +37,21 @@ function validateFname(fname) {
         check = false;
     }
     else {
-        for (let i = 0; i < fname.length; i++){
-            if(!(fname.charCodeAt(i) > 64 && fname.charCodeAt(i) < 91)){
+        for (let i = 0; i < val.length; i++){
+            if(!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))){
                 check = false;
+                if (!fname.classList.contains("bad_input")) {
+                    fname.classList.add("bad_input");
+                    const newDiv = document.createElement("div");
+                    newDiv.setAttribute("id", "error_text");
+                    const newContent = document.createTextNode("First name must contain only letters!");
+                    newDiv.appendChild(newContent);
+                    newDiv.classList.add("bad_input_message")
+                    fname.after(newDiv);
+                    break;
+                }
             }
         }
-        /* for (let i = 0; i < val.length; i++) {
-            console.log(val.charCodeAt(i));
-        }
-        alert(`You have inputted: ${val}`); */
     }
     return check;
 }
@@ -49,10 +59,16 @@ function validateFname(fname) {
 function validateLname(lname) {
     let val = lname.value;
     let check = true;
+    if (fname.classList.contains("bad_input")) {
+        fname.classList.remove("bad_input");
+        const element = document.getElementById("error_text");
+        element.remove();
+    }
     if (val === '') {
         if (!lname.classList.contains("bad_input")) {
             lname.classList.add("bad_input");
             const newDiv = document.createElement("div");
+            newDiv.setAttribute("id", "error_text");
             const newContent = document.createTextNode("Last name must not be empty!");
             newDiv.appendChild(newContent);
             newDiv.classList.add("bad_input_message")
@@ -65,10 +81,11 @@ function validateLname(lname) {
             let charval = val.charCodeAt(i); 
             if(charval<65 || (charval>90 && charval<97) || charval>122){
                 check = false;
+                
                 break;
             }
         }
-        alert(`You have inputted: ${val}`);
+        
     }
     return check;
 }
