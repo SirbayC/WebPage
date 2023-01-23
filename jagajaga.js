@@ -25,7 +25,7 @@ function validateFname(fname) {
         if (!fname.classList.contains("bad_input")) {
             fname.classList.add("bad_input");
             const newDiv = document.createElement("div");
-            const newContent = document.createTextNode("First name must not be fgggggggggggggggggggggggggggempty!");
+            const newContent = document.createTextNode("First name must not be empty!");
             newDiv.appendChild(newContent);
             newDiv.classList.add("bad_input_message")
             fname.after(newDiv);
@@ -33,10 +33,15 @@ function validateFname(fname) {
         check = false;
     }
     else {
-        // for (let i = 0; i < val.length; i++) {
-        //     console.log(val.charCodeAt(i));
-        // }
-        // alert(`You have inputted: ${val}`);
+        for (let i = 0; i < fname.length; i++){
+            if(!(fname.charCodeAt(i) > 64 && fname.charCodeAt(i) < 91)){
+                check = false;
+            }
+        }
+        /* for (let i = 0; i < val.length; i++) {
+            console.log(val.charCodeAt(i));
+        }
+        alert(`You have inputted: ${val}`); */
     }
     return check;
 }
