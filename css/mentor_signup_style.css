@@ -105,7 +105,7 @@ a:active {
 
 #contentbox4 {
   padding: 5%;
-  flex-grow: 1;
+  flex-grow: 0.4;
   gap: 20px;
   display: flex;
   flex-direction: column;

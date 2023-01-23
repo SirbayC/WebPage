@@ -7,8 +7,23 @@ function validateRegisterForm() {
     let password = document.getElementById('password');
     let password2 = document.getElementById('password2');
     let sexsekect = document.getElementById('sex');
+    let country = document.getElementById('country');
+    let zipcode = document.getElementById('code');
+    let bio = document.getElementById('bio');
+    let street = document.getElementById('street');
+    let housenum = document.getElementById('number');
 
-    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateUsername(username) & validateEmail(email) & validateSex(sexsekect)) {
+    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateUsername(username) & validateEmail(email) & validateSex(sexsekect) & validateCountry(country) & validateZip(zipcode)) {
+        alert(`You have succesfully created an account with the following data:
+        \nFirst name: ${fname.value}
+        \nLast name: ${lname.value}
+        \nSex: ${sexsekect.value}
+        \nLanguage: ${language.value}
+        \nUsername: ${username.value}
+        \nEmail: ${email.value}
+        \nPassword: ${password.value}
+        \nBio: ${bio.value}
+        \nAddress: ${street.value} ${housenum.value}, ${zipcode.value}, ${country.value}`);
         window.location.href = "mentor_meet.html";
         return true;
     }
@@ -43,7 +58,7 @@ function validateFname(fname) {
     }
     else {
         for (let i = 0; i < val.length; i++) {
-            if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))) {
+            if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123) || val.charCodeAt(i) == 32)) {
                 check = false;
                 fname.classList.add("bad_input");
                 const newDiv = document.createElement("div");
@@ -94,7 +109,7 @@ function validateLname(lname) {
     else {
         for (let i = 0; i < val.length; i++) {
             let charval = val.charCodeAt(i);
-            if (charval < 65 || (charval > 90 && charval < 97) || charval > 122) {
+            if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123) || val.charCodeAt(i) == 32)) {
                 check = false;
                 lname.classList.add("bad_input");
                 const newDiv = document.createElement("div");
@@ -198,7 +213,7 @@ function validateEmail(email) {
             if (point === true && arond === true)
                 partthr = true
         }
-        if (!(partone && arond && parttwo && point && partthr && val.length>4)) {
+        if (!(partone && arond && parttwo && point && partthr && val.length > 4)) {
             check = false;
             email.classList.add("bad_input");
             const newDiv = document.createElement("div");
@@ -226,41 +241,44 @@ function validateUsername(username) {
     let check = true;
     if (username.classList.contains("bad_input")) {
         username.classList.remove("bad_input");
-        const element = document.getElementById("error_text_username");
-        element.remove();
+        Array.from(document.getElementsByClassName('error_text_username')).forEach(element => {
+            element.remove();
+        });
     }
     if (username.classList.contains("good_input")) {
         username.classList.remove("good_input");
         const element = document.getElementById("good_text_username");
         element.remove();
     }
-    if (val === '') {
+    if (val.length < 5 || val.length > 12) {
         username.classList.add("bad_input");
         const newDiv = document.createElement("div");
-        newDiv.setAttribute("id", "error_text_username");
-        const newContent = document.createTextNode("Username must not be empty!");
+        const newContent = document.createTextNode("Username must have between 5 and 12 characters");
         newDiv.appendChild(newContent);
-        newDiv.classList.add("bad_input_message")
+        newDiv.classList.add("bad_input_message");
+        newDiv.classList.add("error_text_username");
         username.after(newDiv);
         check = false;
     }
-    else {
-        if (val.length < 4 || val.length > 12)
-            check = false;
-        if (val.charCodeAt(0) < 65 || val.charCodeAt(0) > 90)
-            check = false;
-        if ((val.charCodeAt(val.length - 1) > 64 && val.charCodeAt(val.length - 1) < 91) || (val.charCodeAt(val.length - 1) > 96 && val.charCodeAt(val.length - 1) < 123))
-            check = false;
-        if (check === false) {
-            username.classList.add("bad_input");
-            const newDiv = document.createElement("div");
-            newDiv.setAttribute("id", "error_text_username");
-            const newContent = document.createTextNode("Username must start with a capital letter and end with a number or special character!");
-            newDiv.appendChild(newContent);
-            newDiv.classList.add("bad_input_message")
-            username.after(newDiv);
-            check = false;
-        }
+    if (val.charCodeAt(0) < 65 || val.charCodeAt(0) > 90) {
+        username.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Username must start with a capital letter!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message");
+        newDiv.classList.add("error_text_username");
+        username.after(newDiv);
+        check = false;
+    }
+    if ((val.charCodeAt(val.length - 1) > 64 && val.charCodeAt(val.length - 1) < 91) || (val.charCodeAt(val.length - 1) > 96 && val.charCodeAt(val.length - 1) < 123)) {
+        username.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Username must end with a number or special character!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message");
+        newDiv.classList.add("error_text_username");
+        username.after(newDiv);
+        check = false;
     }
     if (check === true) {
         username.classList.add("good_input");
@@ -268,7 +286,7 @@ function validateUsername(username) {
         newDiv.setAttribute("id", "good_text_username");
         const newContent = document.createTextNode("Looks good!");
         newDiv.appendChild(newContent);
-        newDiv.classList.add("good_input_message")
+        newDiv.classList.add("good_input_message");
         username.after(newDiv);
     }
     return check;
@@ -305,6 +323,92 @@ function validateSex(sexsekect) {
         newDiv.appendChild(newContent);
         newDiv.classList.add("good_input_message")
         sexsekect.after(newDiv);
+    }
+    return check;
+}
+
+function validateCountry(country) {
+    if (country.classList.contains("bad_input")) {
+        country.classList.remove("bad_input");
+        const element = document.getElementById("error_text_country");
+        element.remove();
+    }
+    if (country.classList.contains("good_input")) {
+        country.classList.remove("good_input");
+        const element = document.getElementById("good_text_country");
+        element.remove();
+    }
+    let val = country.value;
+    let check = true;
+    if (val === '') {
+        country.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text_country");
+        const newContent = document.createTextNode("Country must not be empty!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        country.after(newDiv);
+        check = false;
+    }
+    if (check === true) {
+        country.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_country");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        country.after(newDiv);
+    }
+    return check;
+}
+
+function validateZip(zipcode) {
+    let val = zipcode.value;
+    let check = true;
+    if (zipcode.classList.contains("bad_input")) {
+        zipcode.classList.remove("bad_input");
+        Array.from(document.getElementsByClassName('error_text_zipcode')).forEach(element => {
+            element.remove();
+        });
+    }
+    if (zipcode.classList.contains("good_input")) {
+        zipcode.classList.remove("good_input");
+        const element = document.getElementById("good_text_zipcode");
+        element.remove();
+    }
+    if (val.length != 6) {
+        zipcode.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Zip code must have 6 characters");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message");
+        newDiv.classList.add("error_text_zipcode");
+        zipcode.after(newDiv);
+        check = false;
+    }
+    else if (!(val.charCodeAt(0) >= 48 && val.charCodeAt(0) <= 57 &
+    val.charCodeAt(1) >= 48 && val.charCodeAt(1) <= 57 &
+    val.charCodeAt(2) >= 48 && val.charCodeAt(2) <= 57 &
+    val.charCodeAt(3) >= 48 && val.charCodeAt(3) <= 57 &
+    val.charCodeAt(4) >= 65 && val.charCodeAt(4) <= 90 &
+    val.charCodeAt(5) >= 65 && val.charCodeAt(5) <= 90)) {
+        zipcode.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Zip code must have 4 digits and 2 capital letters");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message");
+        newDiv.classList.add("error_text_zipcode");
+        zipcode.after(newDiv);
+        check = false;
+    }
+    if (check === true) {
+        zipcode.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_zipcode");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message");
+        zipcode.after(newDiv);
     }
     return check;
 }

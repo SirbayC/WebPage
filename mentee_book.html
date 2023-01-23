@@ -23,7 +23,7 @@
             </li>
 
             <li>
-                <a href="mentor_search.html">
+                <a href="mentee_search.html">
                     Search
                 </a>
             </li>
@@ -44,40 +44,42 @@
     </nav>
     <div id="contentbox1">
         <div id="contentbox2">
-            <div id="contentbox3">
-                <h3>Confirm your meeting with (Mentor name) by choosing a time slot:</h3>
-                <div>
-                    Select a day of the week:
-                    <label for="day"></label>
-                    <select required>
-                        <option value="" disabled selected hidden>Select your option</option>
-                        <option value="Monday">Monday</option>
-                        <option value="Tuesday">Tuesday</option>
-                        <option value="Wednesday">Wednesday</option>
-                        <option value="Thursday">Thursday</option>
-                        <option value="Friday">Friday</option>
-                    </select>
+            <form action="mentee_search.html">
+                <div id="contentbox3">
+                    <h3>Confirm your meeting with (Mentor name) by choosing a time slot:</h3>
+                    <div>
+                        <label for="day" style="padding-right:10px;">Select a day of the week:</label>
+                        <select required>
+                            <option value="" disabled selected hidden>Select your option</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+                    </div>
+                    <div>
+                        
+                        <label for="day" style="padding-right:10px;">Select a time slot :</label>
+                        <select required name="sex" id="sex" placeholder="fefef">
+                            <option value="" disabled selected hidden>Select your option</option>
+                            <option value="9:30"> 9:30</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:30">11:30</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:30">18:30</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" class="fill">Confirm</button>
+                    </div>
                 </div>
-                <div>
-                    Select a time slot :
-                    <label for="day"></label>
-                    <select required name="sex" id="sex" placeholder="fefef">
-                        <option value="" disabled selected hidden>Select your option</option>
-                        <option value="9:30"> 9:30</option>
-                        <option value="10:30">10:30</option>
-                        <option value="11:30">11:30</option>
-                        <option value="13:30">13:30</option>
-                        <option value="14:30">14:30</option>
-                        <option value="15:30">15:30</option>
-                        <option value="16:30">16:30</option>
-                        <option value="17:30">17:30</option>
-                        <option value="18:30">18:30</option>
-                    </select>
-                </div>
-                <div>
-                    <a href="mentee_search.html"><button type="button" class="fill">Confirm</button></a>
-                </div>
-            </div>
+            </form>
+
         </div>
     </div>
     </div>
