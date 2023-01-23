@@ -329,15 +329,15 @@ function validatePassword(password, password2) {
         const element = document.getElementById("ok_text_password");
         element.remove();
     }
-
-
     if (password2.classList.contains("bad_input")) {
         password2.classList.remove("bad_input");
     }
     if (password2.classList.contains("good_input")) {
         password2.classList.remove("good_input");
     }
-    
+    if (password2.classList.contains("ok_input")) {
+        password2.classList.remove("ok_input");
+    }
     if (val === '') {
         password.classList.add("bad_input");
         password2.classList.add("bad_input");
@@ -383,7 +383,7 @@ function validatePassword(password, password2) {
                         password.classList.add("ok_input");
                         password2.classList.add("ok_input");
                         const newDiv = document.createElement("div");
-                        newDiv.setAttribute("id", "error_text_password");
+                        newDiv.setAttribute("id", "ok_text_password");
                         const newContent = document.createTextNode("A password of 14 characters or more is recommanded!");
                         newDiv.appendChild(newContent);
                         newDiv.classList.add("ok_input_message")
@@ -393,7 +393,7 @@ function validatePassword(password, password2) {
                     else {
                         password.classList.add("good_input");
                         const newDiv = document.createElement("div");
-                        newDiv.setAttribute("id", "error_text_password");
+                        newDiv.setAttribute("id", "good_text_password");
                         const newContent = document.createTextNode("Looks good!");
                         newDiv.appendChild(newContent);
                         newDiv.classList.add("good_input_message")
