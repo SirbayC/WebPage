@@ -221,19 +221,57 @@ function validateEmail(email) {
     return check;
 }
 
-function validateUsername(username){
+function validateUsername(username) {
     let val = username.value;
     let check = true;
-    if (email.classList.contains("bad_input")) {
-        email.classList.remove("bad_input");
-        const element = document.getElementById("error_text_email");
+    if (username.classList.contains("bad_input")) {
+        username.classList.remove("bad_input");
+        const element = document.getElementById("error_text_username");
         element.remove();
     }
-    if (email.classList.contains("good_input")) {
-        email.classList.remove("good_input");
-        const element = document.getElementById("good_text_email");
+    if (username.classList.contains("good_input")) {
+        username.classList.remove("good_input");
+        const element = document.getElementById("good_text_username");
         element.remove();
     }
+    if (val === '') {
+        username.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text_username");
+        const newContent = document.createTextNode("Username must not be empty!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        username.after(newDiv);
+        check = false;
+    }
+    else {
+        if (val.length < 4 || val.length > 12)
+            check = false;
+        if (val.charCodeAt(0) < 65 || val.charCodeAt(0) > 90)
+            check = false;
+        if ((val.charCodeAt(val.length - 1) > 64 && val.charCodeAt(val.length - 1) < 91) || (val.charCodeAt(val.length - 1) > 96 && val.charCodeAt(val.length - 1) < 123))
+            check = false;
+        if (check === false) {
+            username.classList.add("bad_input");
+            const newDiv = document.createElement("div");
+            newDiv.setAttribute("id", "error_text_username");
+            const newContent = document.createTextNode("Username must start with a capital letter and end with a number or special character!");
+            newDiv.appendChild(newContent);
+            newDiv.classList.add("bad_input_message")
+            username.after(newDiv);
+            check = false;
+        }
+    }
+    if (check === true) {
+        username.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_username");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        username.after(newDiv);
+    }
+    return check;
 }
 
 function validateSex(sexsekect) {
