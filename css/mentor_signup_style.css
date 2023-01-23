@@ -207,10 +207,25 @@ input {
 }
 
 .good_input_message {
-
   display: flex;
   flex-grow: 0;
   color: green;
+  font-size: 0.55rem;
+  font-weight: 600;
+}
+
+.ok_input {
+  border-style: solid;
+  border-color: orange;
+  border-radius: 4px;
+  border-width: 2px;
+  position: relative;
+}
+
+.ok_input_message {
+  display: flex;
+  flex-grow: 0;
+  color: orange;
   font-size: 0.55rem;
   font-weight: 600;
 }

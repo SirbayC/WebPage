@@ -8,7 +8,7 @@ function validateRegisterForm() {
     let password2 = document.getElementById('password2');
     let sexsekect = document.getElementById('sex');
 
-    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateUsername(username) & validateEmail(email) & validateSex(sexsekect)) {
+    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateUsername(username) & validateEmail(email) & validateSex(sexsekect) & validatePassword(password, password2)) {
         window.location.href = "mentor_meet.html";
         return true;
     }
@@ -305,6 +305,124 @@ function validateSex(sexsekect) {
         newDiv.appendChild(newContent);
         newDiv.classList.add("good_input_message")
         sexsekect.after(newDiv);
+    }
+    return check;
+}
+
+function validatePassword(password, password2) {
+    let val = password.value;
+    let val2 = password2.value;
+    let matchy = false;
+    let check = true;
+    if (password.classList.contains("bad_input")) {
+        password.classList.remove("bad_input");
+        const element = document.getElementById("error_text_password");
+        element.remove();
+    }
+    if (password.classList.contains("good_input")) {
+        password.classList.remove("good_input");
+        const element = document.getElementById("good_text_username");
+        element.remove();
+    }
+    if (password2.classList.contains("bad_input")) {
+        password2.classList.remove("bad_input");
+        const element = document.getElementById("error_text_password");
+        element.remove();
+    }
+    if (password2.classList.contains("good_input")) {
+        password2.classList.remove("good_input");
+        const element = document.getElementById("good_text_username");
+        element.remove();
+    }
+    if (val === '') {
+        password.classList.add("bad_input");
+        password2.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text_password");
+        const newContent = document.createTextNode("Password must not be empty!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        password.after(newDiv);
+        check = false;
+    }
+    else {
+        let uppercase = false;
+        let lowercase = false;
+        let number = false;
+        let symbol = false;
+        if (val === val2) {
+            matchy = true;
+            for (let i = 0; i < val.length; i++) {
+                if (val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91)
+                    uppercase = true;
+                else if (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123)
+                    lowercase = true;
+                else if (val.charCodeAt(i) > 47 && val.charCodeAt(i) < 58)
+                    number = true;
+                else
+                    symbol = true;
+            }
+            if (val.length < 12) {
+                password.classList.add("bad_input");
+                const newDiv = document.createElement("div");
+                newDiv.setAttribute("id", "error_text_password");
+                const newContent = document.createTextNode("Password must be at least 12 characters long!");
+                newDiv.appendChild(newContent);
+                newDiv.classList.add("bad_input_message")
+                password.after(newDiv);
+                password2.classList.add("bad_input");
+                check = false;
+            }
+            else {
+                if (uppercase && lowercase && number && symbol){
+                    if (val.length > 11 && val.length < 14) {
+                        password.classList.add("ok_input");
+                        password2.classList.add("ok_input");
+                        const newDiv = document.createElement("div");
+                        newDiv.setAttribute("id", "error_text_password");
+                        const newContent = document.createTextNode("A password of 14 characters or more is recommanded!");
+                        newDiv.appendChild(newContent);
+                        newDiv.classList.add("ok_input_message")
+                        password.after(newDiv);
+                        check = true;
+                    }
+                    else {
+                        password.classList.add("good_input");
+                        const newDiv = document.createElement("div");
+                        newDiv.setAttribute("id", "error_text_password");
+                        const newContent = document.createTextNode("Looks good!");
+                        newDiv.appendChild(newContent);
+                        newDiv.classList.add("good_input_message")
+                        password.after(newDiv);
+                        password2.classList.add("good_input");
+                        check = true;
+                    }
+                }
+                else {
+                    password.classList.add("bad_input");
+                    password2.classList.add("bad_input");
+                    const newDiv = document.createElement("div");
+                    newDiv.setAttribute("id", "error_text_password");
+                    const newContent = document.createTextNode("Password requires a combination of uppercase letters, lowercase letters, numbers, and symbols!");
+                    newDiv.appendChild(newContent);
+                    newDiv.classList.add("bad_input_message")
+                    password.after(newDiv);
+                    check = false;
+                }
+
+            }
+        }
+        else {
+            password.classList.add("bad_input");
+            const newDiv = document.createElement("div");
+            newDiv.setAttribute("id", "error_text_password");
+            const newContent = document.createTextNode("Passwords don't match!");
+            newDiv.appendChild(newContent);
+            newDiv.classList.add("bad_input_message")
+            password.after(newDiv);
+            password2.classList.add("bad_input");
+            check = false;
+        }
     }
     return check;
 }
