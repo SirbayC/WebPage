@@ -531,3 +531,12 @@ function validateZip(zipcode) {
     }
     return check;
 }
+
+
+
+function showStats(){
+    const el = document.getElementById('sefulabani');
+    el.style.display='flex';
+    el.style.flexDirection='column';
+
+}

@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./jagajaga.js"></script>
+    <script>
+        document.body.addEventListener('click', function (event) {
+            alert("aa");
+        });
+    </script>
 </head>
 
 <body>
@@ -134,7 +139,27 @@
                     <input type="password" placeholder="*****************">
                 </div>
                 <div>
-                    <button type="submit" class="fill" id="mentor_si_btn">Sign in</button>
+                    <button type="submit" class="fill">Sign in</button>
+                    <button type="button" class="fill" id="mentor_si_btn" style="margin-left: 20px;"
+                        onclick="showStats()">Show stats</button>
+                </div>
+                <div id="sefulabani">
+                    <h1>Behavioral data</h1>
+                    <h4>in a proeminent place :</h4>
+                    <br>
+                    <br>
+                    <div>
+                        Number of mouse clicks: <span id="clicks">11</span> / 30
+                    </div>
+                    <div>
+                        Total time spent: <span id="time">11</span> / 2 minutes
+                    </div>
+                    <div>
+                        Total key presses: <span id="keys">20</span> / 10
+                    </div>
+                    <div>
+                        Total number of characters typed: <span id="chars">20</span> / 100
+                    </div>
                 </div>
             </form>
         </div>
