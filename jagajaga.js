@@ -6,7 +6,7 @@ function validateRegisterForm() {
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     let password2 = document.getElementById('password2');
-    if (validateFname(fname) & validateLname(lname)) {
+    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateEmail(email)) {
         window.location.href = "mentor_meet.html";
         return true;
     }
@@ -20,6 +20,11 @@ function validateFname(fname) {
     if (fname.classList.contains("bad_input")) {
         fname.classList.remove("bad_input");
         const element = document.getElementById("error_text_fname");
+        element.remove();
+    }
+    if (fname.classList.contains("good_input")) {
+        fname.classList.remove("good_input");
+        const element = document.getElementById("good_text_fname");
         element.remove();
     }
     let val = fname.value;
@@ -48,6 +53,15 @@ function validateFname(fname) {
                 break;
             }
         }
+    }
+    if (check === true) {
+        fname.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_fname");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        fname.after(newDiv);
     }
     return check;
 }
@@ -84,41 +98,74 @@ function validateLname(lname) {
     return check;
 }
 
-function validateEmail(email){
+function validateLanguage(language) {
+    let val = language.value;
+    let check = true;
+    if (language.classList.contains("bad_input")) {
+        language.classList.remove("bad_input");
+        const element = document.getElementById("error_text_language");
+        element.remove();
+    }
+    if (val === '') {
+        language.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text_language");
+        const newContent = document.createTextNode("Language must not be empty!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        language.after(newDiv);
+        check = false;
+    }
+    return check;
+}
+
+function validateEmail(email) {
     let val = email.value;
     let check = true;
-    if (fname.classList.contains("bad_input")) {
-        fname.classList.remove("bad_input");
+    if (email.classList.contains("bad_input")) {
+        email.classList.remove("bad_input");
         const element = document.getElementById("error_text_email");
         element.remove();
     }
     if (val === '') {
-        if (!fname.classList.contains("bad_input")) {
-            fname.classList.add("bad_input");
+        if (!email.classList.contains("bad_input")) {
+            email.classList.add("bad_input");
             const newDiv = document.createElement("div");
             newDiv.setAttribute("id", "error_text_email");
             const newContent = document.createTextNode("Email must not be empty!");
             newDiv.appendChild(newContent);
             newDiv.classList.add("bad_input_message")
-            fname.after(newDiv);
+            email.after(newDiv);
         }
         check = false;
     }
     else {
-        for (let i = 0; i < val.length; i++){
-            if(!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))){
-                check = false;
-                if (!fname.classList.contains("bad_input")) {
-                    fname.classList.add("bad_input");
-                    const newDiv = document.createElement("div");
-                    newDiv.setAttribute("id", "error_text");
-                    const newContent = document.createTextNode("First name must contain only letters!");
-                    newDiv.appendChild(newContent);
-                    newDiv.classList.add("bad_input_message")
-                    fname.after(newDiv);
-                    break;
-                }
-            }
+        let partone = false;
+        let parttwo = false;
+        let partthr = false;
+        let point = false;
+        let arond = false;
+        for (let i = 0; i < val.length; i++) {
+            if (val.charCodeAt(i) === 64)
+                arond = true;
+            if (val.charCodeAt(i) === 46 && arond === true)
+                point = true;
+            if (point === false && arond === false)
+                partone = true;
+            if (point === false && arond === true)
+                parttwo = true;
+            if (point === true && arond === true)
+                partthr = true
+        }
+        if (!(partone && arond && parttwo && point && partthr)) {
+            check = false;
+            email.classList.add("bad_input");
+            const newDiv = document.createElement("div");
+            newDiv.setAttribute("id", "error_text_email");
+            const newContent = document.createTextNode("Email not valid!");
+            newDiv.appendChild(newContent);
+            newDiv.classList.add("bad_input_message")
+            email.after(newDiv);
         }
     }
     return check;
