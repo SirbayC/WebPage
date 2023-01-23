@@ -88,3 +88,42 @@ function validateLname(lname) {
     return check;
 }
 
+function validateEmail(email){
+    let val = email.value;
+    let check = true;
+    if (fname.classList.contains("bad_input")) {
+        fname.classList.remove("bad_input");
+        const element = document.getElementById("error_text_email");
+        element.remove();
+    }
+    if (val === '') {
+        if (!fname.classList.contains("bad_input")) {
+            fname.classList.add("bad_input");
+            const newDiv = document.createElement("div");
+            newDiv.setAttribute("id", "error_text_email");
+            const newContent = document.createTextNode("Email must not be empty!");
+            newDiv.appendChild(newContent);
+            newDiv.classList.add("bad_input_message")
+            fname.after(newDiv);
+        }
+        check = false;
+    }
+    else {
+        for (let i = 0; i < val.length; i++){
+            if(!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))){
+                check = false;
+                if (!fname.classList.contains("bad_input")) {
+                    fname.classList.add("bad_input");
+                    const newDiv = document.createElement("div");
+                    newDiv.setAttribute("id", "error_text");
+                    const newContent = document.createTextNode("First name must contain only letters!");
+                    newDiv.appendChild(newContent);
+                    newDiv.classList.add("bad_input_message")
+                    fname.after(newDiv);
+                    break;
+                }
+            }
+        }
+    }
+    return check;
+}
