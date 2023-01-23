@@ -282,6 +282,11 @@ function validateSex(sexsekect) {
         const element = document.getElementById("error_text_sexsekect");
         element.remove();
     }
+    if (sexsekect.classList.contains("good_input")) {
+        sexsekect.classList.remove("good_input");
+        const element = document.getElementById("good_text_sexsekect");
+        element.remove();
+    }
     if (val === 'def') {
         sexsekect.classList.add("bad_input");
         const newDiv = document.createElement("div");
@@ -292,8 +297,14 @@ function validateSex(sexsekect) {
         sexsekect.after(newDiv);
         check = false;
     }
-    else {
-        sexsekect.style.color = '#131310';
+    if (check === true) {
+        sexsekect.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_sexsekect");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        sexsekect.after(newDiv);
     }
     return check;
 }
