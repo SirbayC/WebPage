@@ -57,11 +57,18 @@
                 <div class="shortfield">
                     <label for="sex">Sex</label>
                     <select name="sex" id="sex" placeholder="fefef">
-                        <option value="" disabled selected hidden>Select your option</option>
+                        <option value="def" disabled selected hidden>Select your option</option>
                         <option value="Female">Female</option>
                         <option value="Male">Male</option>
                         <option value="Other">Other</option>
                     </select>
+                    <script>
+                        document.getElementById('sex').onchange = function(){
+                            if(s.value!='def'){
+                                s.style.color = 'red';
+                            }
+                        };
+                    </script>
                 </div>
                 <div class="longfield">
                     <label for="">Language</label>

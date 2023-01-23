@@ -6,7 +6,9 @@ function validateRegisterForm() {
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     let password2 = document.getElementById('password2');
-    if (validateFname(fname) & validateLname(lname)) {
+    let sexsekect = document.getElementById('sex');
+
+    if (validateFname(fname) & validateLname(lname) & validateSex(sexsekect)) {
         window.location.href = "mentor_meet.html";
         return true;
     }
@@ -75,7 +77,13 @@ function validateLname(lname) {
             let charval = val.charCodeAt(i);
             if (charval < 65 || (charval > 90 && charval < 97) || charval > 122) {
                 check = false;
-
+                lname.classList.add("bad_input");
+                const newDiv = document.createElement("div");
+                newDiv.setAttribute("id", "error_text_lname");
+                const newContent = document.createTextNode("Last name must contain only letters!");
+                newDiv.appendChild(newContent);
+                newDiv.classList.add("bad_input_message")
+                lname.after(newDiv);
                 break;
             }
         }
@@ -84,3 +92,27 @@ function validateLname(lname) {
     return check;
 }
 
+
+function validateSex(sexsekect) {
+    let val = sexsekect.value;
+    let check = true;
+    if (sexsekect.classList.contains("bad_input")) {
+        sexsekect.classList.remove("bad_input");
+        const element = document.getElementById("error_text_sexsekect");
+        element.remove();
+    }
+    if (val === 'def') {
+        sexsekect.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text_sexsekect");
+        const newContent = document.createTextNode("Choose an option!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        sexsekect.after(newDiv);
+        check = false;
+    }
+    else {
+        sexsekect.style.color = '#131310';
+    }
+    return check;
+}
