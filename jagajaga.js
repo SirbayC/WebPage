@@ -8,7 +8,7 @@ function validateRegisterForm() {
     let password2 = document.getElementById('password2');
     let sexsekect = document.getElementById('sex');
 
-    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateEmail(email) & validateSex(sexsekect)) {
+    if (validateFname(fname) & validateLname(lname) & validateLanguage(language) & validateUsername(username) & validateEmail(email) & validateSex(sexsekect)) {
         window.location.href = "mentor_meet.html";
         return true;
     }
@@ -76,6 +76,11 @@ function validateLname(lname) {
         const element = document.getElementById("error_text_lname");
         element.remove();
     }
+    if (lname.classList.contains("good_input")) {
+        lname.classList.remove("good_input");
+        const element = document.getElementById("good_text_lname");
+        element.remove();
+    }
     if (val === '') {
         lname.classList.add("bad_input");
         const newDiv = document.createElement("div");
@@ -103,6 +108,15 @@ function validateLname(lname) {
         }
 
     }
+    if (check === true) {
+        lname.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_lname");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        lname.after(newDiv);
+    }
     return check;
 }
 
@@ -112,6 +126,11 @@ function validateLanguage(language) {
     if (language.classList.contains("bad_input")) {
         language.classList.remove("bad_input");
         const element = document.getElementById("error_text_language");
+        element.remove();
+    }
+    if (language.classList.contains("good_input")) {
+        language.classList.remove("good_input");
+        const element = document.getElementById("good_text_language");
         element.remove();
     }
     if (val === '') {
@@ -124,6 +143,15 @@ function validateLanguage(language) {
         language.after(newDiv);
         check = false;
     }
+    if (check === true) {
+        language.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_language");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        language.after(newDiv);
+    }
     return check;
 }
 
@@ -133,6 +161,11 @@ function validateEmail(email) {
     if (email.classList.contains("bad_input")) {
         email.classList.remove("bad_input");
         const element = document.getElementById("error_text_email");
+        element.remove();
+    }
+    if (email.classList.contains("good_input")) {
+        email.classList.remove("good_input");
+        const element = document.getElementById("good_text_email");
         element.remove();
     }
     if (val === '') {
@@ -176,7 +209,31 @@ function validateEmail(email) {
             email.after(newDiv);
         }
     }
+    if (check === true) {
+        email.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_email");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        email.after(newDiv);
+    }
     return check;
+}
+
+function validateUsername(username){
+    let val = username.value;
+    let check = true;
+    if (email.classList.contains("bad_input")) {
+        email.classList.remove("bad_input");
+        const element = document.getElementById("error_text_email");
+        element.remove();
+    }
+    if (email.classList.contains("good_input")) {
+        email.classList.remove("good_input");
+        const element = document.getElementById("good_text_email");
+        element.remove();
+    }
 }
 
 function validateSex(sexsekect) {
