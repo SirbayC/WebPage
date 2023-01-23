@@ -25,20 +25,18 @@ function validateFname(fname) {
     let val = fname.value;
     let check = true;
     if (val === '') {
-        if (!fname.classList.contains("bad_input")) {
-            fname.classList.add("bad_input");
-            const newDiv = document.createElement("div");
-            newDiv.setAttribute("id", "error_text");
-            const newContent = document.createTextNode("First name must not be empty!");
-            newDiv.appendChild(newContent);
-            newDiv.classList.add("bad_input_message")
-            fname.after(newDiv);
-        }
+        fname.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text");
+        const newContent = document.createTextNode("First name must not be empty!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        fname.after(newDiv);
         check = false;
     }
     else {
-        for (let i = 0; i < val.length; i++){
-            if(!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))){
+        for (let i = 0; i < val.length; i++) {
+            if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))) {
                 check = false;
                 if (!fname.classList.contains("bad_input")) {
                     fname.classList.add("bad_input");
@@ -78,14 +76,14 @@ function validateLname(lname) {
     }
     else {
         for (let i = 0; i < val.length; i++) {
-            let charval = val.charCodeAt(i); 
-            if(charval<65 || (charval>90 && charval<97) || charval>122){
+            let charval = val.charCodeAt(i);
+            if (charval < 65 || (charval > 90 && charval < 97) || charval > 122) {
                 check = false;
-                
+
                 break;
             }
         }
-        
+
     }
     return check;
 }
