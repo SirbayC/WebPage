@@ -321,17 +321,17 @@ function validatePassword(password, password2) {
     }
     if (password.classList.contains("good_input")) {
         password.classList.remove("good_input");
-        const element = document.getElementById("good_text_username");
+        const element = document.getElementById("good_text_password");
         element.remove();
     }
     if (password2.classList.contains("bad_input")) {
         password2.classList.remove("bad_input");
-        const element = document.getElementById("error_text_password");
+        const element = document.getElementById("error_text_password2");
         element.remove();
     }
     if (password2.classList.contains("good_input")) {
         password2.classList.remove("good_input");
-        const element = document.getElementById("good_text_username");
+        const element = document.getElementById("good_text_password2");
         element.remove();
     }
     if (val === '') {
@@ -374,7 +374,7 @@ function validatePassword(password, password2) {
                 check = false;
             }
             else {
-                if (uppercase && lowercase && number && symbol){
+                if (uppercase && lowercase && number && symbol) {
                     if (val.length > 11 && val.length < 14) {
                         password.classList.add("ok_input");
                         password2.classList.add("ok_input");
@@ -423,6 +423,92 @@ function validatePassword(password, password2) {
             password2.classList.add("bad_input");
             check = false;
         }
+    }
+    return check;
+}
+
+function validateCountry(country) {
+    if (country.classList.contains("bad_input")) {
+        country.classList.remove("bad_input");
+        const element = document.getElementById("error_text_country");
+        element.remove();
+    }
+    if (country.classList.contains("good_input")) {
+        country.classList.remove("good_input");
+        const element = document.getElementById("good_text_country");
+        element.remove();
+    }
+    let val = country.value;
+    let check = true;
+    if (val === '') {
+        country.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "error_text_country");
+        const newContent = document.createTextNode("Country must not be empty!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message")
+        country.after(newDiv);
+        check = false;
+    }
+    if (check === true) {
+        country.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_country");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message")
+        country.after(newDiv);
+    }
+    return check;
+}
+
+function validateZip(zipcode) {
+    let val = zipcode.value;
+    let check = true;
+    if (zipcode.classList.contains("bad_input")) {
+        zipcode.classList.remove("bad_input");
+        Array.from(document.getElementsByClassName('error_text_zipcode')).forEach(element => {
+            element.remove();
+        });
+    }
+    if (zipcode.classList.contains("good_input")) {
+        zipcode.classList.remove("good_input");
+        const element = document.getElementById("good_text_zipcode");
+        element.remove();
+    }
+    if (val.length != 6) {
+        zipcode.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Zip code must have 6 characters");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message");
+        newDiv.classList.add("error_text_zipcode");
+        zipcode.after(newDiv);
+        check = false;
+    }
+    else if (!(val.charCodeAt(0) >= 48 && val.charCodeAt(0) <= 57 &
+        val.charCodeAt(1) >= 48 && val.charCodeAt(1) <= 57 &
+        val.charCodeAt(2) >= 48 && val.charCodeAt(2) <= 57 &
+        val.charCodeAt(3) >= 48 && val.charCodeAt(3) <= 57 &
+        val.charCodeAt(4) >= 65 && val.charCodeAt(4) <= 90 &
+        val.charCodeAt(5) >= 65 && val.charCodeAt(5) <= 90)) {
+        zipcode.classList.add("bad_input");
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Zip code must have 4 digits and 2 capital letters");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("bad_input_message");
+        newDiv.classList.add("error_text_zipcode");
+        zipcode.after(newDiv);
+        check = false;
+    }
+    if (check === true) {
+        zipcode.classList.add("good_input");
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "good_text_zipcode");
+        const newContent = document.createTextNode("Looks good!");
+        newDiv.appendChild(newContent);
+        newDiv.classList.add("good_input_message");
+        zipcode.after(newDiv);
     }
     return check;
 }
