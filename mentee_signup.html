@@ -35,7 +35,7 @@
             </li>
         </ul>
     </nav>
-    <div id="contentbox1" onkeydown="updateKey()" onkeypress="updateChar()">
+    <div id="contentbox1" onkeydown="updateKey()">
         <div id="contentbox2">
             <form onsubmit="return validateRegisterForm(2)" id="contentbox3" method="post" target="_blank">
                 <div>
@@ -126,16 +126,14 @@
                 </div>
                 <div class="longfield">
                     <label for="">Email</label>
-                    <input type="text" placeholder="andrew.tate@yahoo.com">
+                    <input type="text" placeholder="andrew.tate@yahoo.com" required id="si_email">
                 </div>
                 <div class="longfield">
                     <label for="">Password</label>
-                    <input type="password" placeholder="*****************">
+                    <input type="password" placeholder="*****************" required id="si_pass">
                 </div>
                 <div>
                     <button type="submit" class="fill">Sign in</button>
-                    <button type="button" class="fill" id="mentor_si_btn" style="margin-left: 20px;"
-                        onclick="showStats()">Show stats</button>
                 </div>
                 <div id="sefulabani">
                     <h1>Behavioral data</h1>

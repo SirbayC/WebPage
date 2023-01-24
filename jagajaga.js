@@ -24,13 +24,14 @@ function validateRegisterForm(page) {
         \nPassword: ${password.value}
         \nBio: ${bio.value}
         \nAddress: ${street.value} ${housenum.value}, ${zipcode.value}, ${country.value}`);
-        if(page===1){
+        /*if(page===1){
         window.location.href = "mentor_meet.html";
         }
         else{
             window.location.href = "mentee_search.html";
-        }
-        return true;
+        }*/
+        showStats();
+        return false;
     }
     else {
         window.scrollTo(0, 0);
@@ -63,7 +64,7 @@ function validateFname(fname) {
     }
     else {
         for (let i = 0; i < val.length; i++) {
-            if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123))) {
+            if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123) || val.charCodeAt(i)==32)) {
                 check = false;
                 fname.classList.add("bad_input");
                 const newDiv = document.createElement("div");
@@ -114,7 +115,7 @@ function validateLname(lname) {
     else {
         for (let i = 0; i < val.length; i++) {
             let charval = val.charCodeAt(i);
-            if (charval < 65 || (charval > 90 && charval < 97) || charval > 122) {
+            if (!((val.charCodeAt(i) > 64 && val.charCodeAt(i) < 91) || (val.charCodeAt(i) > 96 && val.charCodeAt(i) < 123) || val.charCodeAt(i)==32)) {
                 check = false;
                 lname.classList.add("bad_input");
                 const newDiv = document.createElement("div");
@@ -562,12 +563,41 @@ function updateKey(){
 }
 
 function updateChar(){
-    document.getElementById('chars').innerHTML = Number(document.getElementById('chars').innerHTML) + 1;
+    let fname = document.getElementById('fname');
+    let lname = document.getElementById('lname');
+    let language = document.getElementById('language');
+    let username = document.getElementById('username');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let password2 = document.getElementById('password2');
+    let sexsekect = document.getElementById('sex');
+    let country = document.getElementById('country');
+    let zipcode = document.getElementById('code');
+    let bio = document.getElementById('bio');
+    let street = document.getElementById('street');
+    let housenum = document.getElementById('number');
+
+    length = 0;
+    length += fname.value.length;
+    length += lname.value.length;
+    length += language.value.length;
+    length += username.value.length;
+    length += email.value.length;
+    length += password.value.length;
+    length += password2.value.length;
+    length += country.value.length;
+    length += zipcode.value.length;
+    length += bio.value.length;
+    length += street.value.length;
+    length += housenum.value.length;
+    length += document.getElementById("si_email").value.length;
+    length += document.getElementById("si_pass").value.length;
+    document.getElementById('chars').innerHTML = length;
 }
 
 function showStats() {
+    updateChar();
     const el = document.getElementById('sefulabani');
     el.style.display = 'flex';
     el.style.flexDirection = 'column';
-
 }
