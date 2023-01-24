@@ -10,9 +10,10 @@
         href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600,700|Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800|Josefin+Sans:300,400,500,600,700"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
+    <script src="./jagajaga.js"></script>
 </head>
 
-<body>
+<body id="body">
     <nav>
         <ul>
             <li id="logo">
@@ -34,11 +35,9 @@
             </li>
         </ul>
     </nav>
-    <div id="contentbox1">
-
+    <div id="contentbox1" onkeydown="updateKey()" onkeypress="updateChar()">
         <div id="contentbox2">
-
-            <form action="mentee_search.html" id="contentbox3">
+            <form onsubmit="return validateRegisterForm(2)" id="contentbox3" method="post" target="_blank">
                 <div>
                     <h4>Sign up</h4>
                 </div>
@@ -47,47 +46,50 @@
                 gap:20px">
                     <div class="shortfield">
                         <label for="">First name</label>
-                        <input type="text" placeholder="Andrew">
+                        <input type="text" placeholder="Andrew" id="fname" class="test">
                     </div>
                     <div class="shortfield">
                         <label for="">Last name</label>
-                        <input type="text" placeholder="Tate">
+                        <input type="text" placeholder="Tate" id="lname">
                     </div>
                 </div>
                 <div class="shortfield">
                     <label for="sex">Sex</label>
-                    <select required name="sex" id="sex" placeholder="fefef">
-                        <option value="" disabled selected hidden>Select your option</option>
+                    <select name="sex" id="sex" placeholder="fefef">
+                        <option value="def" disabled selected hidden>Select your option</option>
                         <option value="Female">Female</option>
                         <option value="Male">Male</option>
                         <option value="Other">Other</option>
                     </select>
-                </div>
-                <div class="longfield">
-                    <label for="">Language</label>
-                    <input type="text" placeholder="Simlish">
                     <script>
-                        let 
+                        document.addEventListener('input', function (event) {
+                            if (event.target.id !== 'sex') return;
+                            document.getElementById('sex').style.color = '#131310';
+                        });
                     </script>
                 </div>
                 <div class="longfield">
+                    <label for="">Language</label>
+                    <input type="text" placeholder="Simlish" id="language">
+                </div>
+                <div class="longfield">
                     <label for="">Username</label>
-                    <input type="text" placeholder="ILovePizzas">
+                    <input type="text" placeholder="ILovePizzas!" id="username">
                 </div>
                 <div class="longfield">
                     <label for="">Email</label>
-                    <input type="text" placeholder="andrew.tate@yahoo.com">
+                    <input type="text" placeholder="andrew.tate@yahoo.com" id="email">
                 </div>
                 <div class="longfield">
                     <label for="">Password</label>
-                    <input type="password" placeholder="*****************">
+                    <input type="password" placeholder="*****************" id="password">
                 </div>
                 <div class="longfield">
                     <label for="">Confirm password</label>
-                    <input type="password" placeholder="*****************">
+                    <input type="password" placeholder="*****************" id="password2">
                 </div>
                 <label for="Bio">Bio:</label>
-                <textarea id="bio" name="bio" rows="6" cols="25"
+                <textarea id="bio" name="bio" rows="6" cols="25" id="bio"
                     placeholder="    My unmatched perspicacity coupled with sheer indefatigability makes me a feared opponent in any realm of human endeavor."></textarea>
                 <p id="addid">Address:</p>
                 <div style="display: flex; 
@@ -95,11 +97,11 @@
                 gap:20px">
                     <div class="shortfield">
                         <label for="">Country</label>
-                        <input type="text" placeholder="Romania">
+                        <input type="text" placeholder="Romania" id="country" >
                     </div>
                     <div class="shortfield">
                         <label for="">Post code</label>
-                        <input type="text" placeholder="077190">
+                        <input type="text" placeholder="0771NZ" id="code">
                     </div>
                 </div>
                 <div style="display: flex; 
@@ -107,15 +109,15 @@
                 gap:20px">
                     <div class="shortfield">
                         <label for="">Street name</label>
-                        <input type="text" placeholder="Drumul Bisericii">
+                        <input type="text" placeholder="Drumul Bisericii" id="street">
                     </div>
                     <div class="shortfield">
                         <label for="">House Number</label>
-                        <input type="text" placeholder="50">
+                        <input type="text" placeholder="50" id="number">
                     </div>
                 </div>
                 <div>
-                    <a href="mentee_search.html"><button type="submit" class="fill">Register</button></a>
+                    <button type="submit" class="fill" id="mentor_reg_btn">Register</button>
                 </div>
             </form>
             <form action="mentee_search.html" id="contentbox4">
@@ -131,7 +133,25 @@
                     <input type="password" placeholder="*****************">
                 </div>
                 <div>
-                    <a href="mentee_search.html"><button type="submit" class="fill">Sign in</button></a>
+                    <button type="submit" class="fill">Sign in</button>
+                    <button type="button" class="fill" id="mentor_si_btn" style="margin-left: 20px;"
+                        onclick="showStats()">Show stats</button>
+                </div>
+                <div id="sefulabani">
+                    <h1>Behavioral data</h1>
+                    <br>
+                    <div>
+                        Number of mouse clicks: <span id="clicks">0</span>
+                    </div>
+                    <div>
+                        Total time spent: <span id="time">0</span> minutes and <span id="seconds">0</span> seconds.
+                    </div>
+                    <div>
+                        Total key presses: <span id="keys">0</span>
+                    </div>
+                    <div>
+                        Total number of characters typed: <span id="chars">0</span>
+                    </div>
                 </div>
             </form>
         </div>

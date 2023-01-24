@@ -1,4 +1,4 @@
-function validateRegisterForm() {
+function validateRegisterForm(page) {
     let fname = document.getElementById('fname');
     let lname = document.getElementById('lname');
     let language = document.getElementById('language');
@@ -24,7 +24,12 @@ function validateRegisterForm() {
         \nPassword: ${password.value}
         \nBio: ${bio.value}
         \nAddress: ${street.value} ${housenum.value}, ${zipcode.value}, ${country.value}`);
+        if(page===1){
         window.location.href = "mentor_meet.html";
+        }
+        else{
+            window.location.href = "mentee_search.html";
+        }
         return true;
     }
     else {
