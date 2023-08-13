@@ -85,7 +85,7 @@ a:active{
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-image: url("../ttt.png");
+    background-image: url("../bg.png");
     background-repeat: repeat;
     flex-direction: row;
     min-height: 1000px;

@@ -89,7 +89,7 @@ a:active {
 
 #contentbox-1 {
   background-color: pink;
-  background-image: url("../ttt.png");
+  background-image: url("../bg.png");
   background-repeat: repeat;
   display: flex;
   flex-direction: column;
